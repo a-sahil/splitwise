@@ -252,13 +252,9 @@ const ExpenseManager = () => {
     if (!address) return showNotification("Please connect wallet", false);
     setLoading(prev => ({ ...prev, contract: true }));
     try {
-      const iface = new ethers.Interface(contractABI);
-      const data = iface.encodeFunctionData('settleDebt', [groupId, payeeAddress]);
-      
       const transaction = {
         from: address,
-        to: contractAddress,
-        data: data,
+        to: payeeAddress,
         value: ethers.parseEther(settleAmount).toString()
       };
   
@@ -266,10 +262,10 @@ const ExpenseManager = () => {
         method: 'eth_sendTransaction',
         params: [transaction],
       });
-      showNotification("Debt settled successfully");
+      showNotification("Payment sent successfully");
     } catch (error) {
       console.error(error);
-      showNotification("Failed to settle debt", false);
+      showNotification("Payment failed", false);
     }
     setLoading(prev => ({ ...prev, contract: false }));
   };
