@@ -323,8 +323,12 @@ const ExpenseManager = () => {
   };
 
   return (
-    <div className="px-4 w-full h-full pb-5 bg-black">
-    <h1 className="text-3xl font-bold text-center mb-6 text-white">Expense Manager</h1>
+    <div className="px-4 w-full vh-full pb-5 bg-black">
+    <h1 className="text-3xl font-bold text-center mb-6 text-white hover:text-orange-500 hover:animate-shake transition-all duration-500">
+  Expense Manager
+</h1>
+
+
 
     {/* Wallet Connection Section */}
     <section className="mb-6 bg-black rounded-xl p-4 border-2">
