@@ -323,12 +323,12 @@ const ExpenseManager = () => {
   };
 
   return (
-    <div className="px-4 w-full h-full pb-5">
-    <h1 className="text-3xl font-bold text-center mb-6">Expense Manager</h1>
+    <div className="px-4 w-full h-full pb-5 bg-black">
+    <h1 className="text-3xl font-bold text-center mb-6 text-white">Expense Manager</h1>
 
     {/* Wallet Connection Section */}
-    <section className="mb-6 bg-bg_0 rounded-xl p-4">
-      <h2 className="text-xl font-semibold mb-4">Wallet Connection</h2>
+    <section className="mb-6 bg-black rounded-xl p-4 border-2">
+      <h2 className="text-xl font-semibold mb-4 text-white ">Wallet Connection</h2>
       <div className="mb-4 p-4 bg-gray-100 rounded-lg">
         <div className="text-body1 font-semibold mb-2 text-brand_1">
           {address ? 'Connected' : 'Not Connected'}
@@ -348,8 +348,8 @@ const ExpenseManager = () => {
     </section>
 
     {/* Network Selection Section */}
-    <section className="mb-6 bg-bg_0 rounded-xl p-4">
-      <h2 className="text-xl font-semibold mb-4">Network Selection</h2>
+    <section className="mb-6 bg-black rounded-xl p-4 border-2">
+      <h2 className="text-xl font-semibold mb-4 text-white">Network Selection</h2>
       <select
         value={chainId}
         onChange={(e) => switchChain(e.target.value)}
@@ -370,8 +370,8 @@ const ExpenseManager = () => {
     </section>
 
       {/* Create Group Section */}
-      <section className="mb-6 bg-bg_0 rounded-xl p-4">
-        <h2 className="text-xl font-semibold mb-4">Create Group</h2>
+      <section className="mb-6 bg-black rounded-xl p-4 border-2">
+        <h2 className="text-xl font-semibold mb-4 text-white">Create Group</h2>
         <input
           type="text"
           placeholder="Group Name"
@@ -394,8 +394,8 @@ const ExpenseManager = () => {
       </section>
 
       {/* Add Expense Section */}
-      <section className="mb-6 bg-bg_0 rounded-xl p-4">
-        <h2 className="text-xl font-semibold mb-4">Add Expense</h2>
+      <section className="mb-6 bg-black rounded-xl p-4 border-2">
+        <h2 className="text-xl font-semibold mb-4 text-white">Add Expense</h2>
         <input
           type="text"
           placeholder="Group ID"
@@ -439,8 +439,8 @@ const ExpenseManager = () => {
       </section>
 
       {/* Settle Debt Section */}
-      <section className="mb-6 bg-bg_0 rounded-xl p-4">
-        <h2 className="text-xl font-semibold mb-4">Settle Debt</h2>
+      <section className="mb-6 bg-black rounded-xl p-4 border-2">
+        <h2 className="text-xl font-semibold mb-4 text-white">Settle Debt</h2>
         <input
           type="text"
           placeholder="Group ID"
@@ -470,7 +470,7 @@ const ExpenseManager = () => {
       </section>
 
       {/* View Group Info Section */}
-      <section className="mb-6 bg-bg_0 rounded-xl p-4">
+      <section className="mb-6 bg-black rounded-xl p-4 border-2">
         <div className="flex gap-4 mb-4">
           <Btn 
             text="View Members"
