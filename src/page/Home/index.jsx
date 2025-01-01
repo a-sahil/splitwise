@@ -487,7 +487,7 @@ const ExpenseManager = () => {
           <Btn 
             text="View Members"
             onClick={fetchGroupMembers}
-              className="bg-orange hover:bg-orange-400"
+              className="bg-orange-500 hover:bg-orange-400"
           />
           <Btn 
             text="View Balances"
