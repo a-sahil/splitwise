@@ -348,7 +348,7 @@ const ExpenseManager = () => {
         text={address ? 'Disconnect' : 'Connect Wallet'} 
         loading={loading.connect}
         onClick={address ? () => ethereum?.disconnect?.() : connectWallet} 
-        className="bg-orange hover:bg-orange-400"
+        className="bg-orange-500 hover:bg-orange-400"
       />
     </section>
 
@@ -395,7 +395,7 @@ const ExpenseManager = () => {
           text="Create Group"
           loading={loading.contract}
           onClick={createGroup}
-          className="bg-orange hover:bg-orange-400"
+          className="bg-orange-500 hover:bg-orange-400"
         />
 
         <div className="text-white pt-2">
@@ -445,7 +445,7 @@ const ExpenseManager = () => {
           text="Add Expense"
           loading={loading}
           onClick={addExpense}
-            className="bg-orange hover:bg-orange-400"
+            className="bg-orange-500 hover:bg-orange-400"
         />
       </section>
 
@@ -477,7 +477,7 @@ const ExpenseManager = () => {
           text="Settle Debt"
           loading={loading}
           onClick={settleDebt}
-            className="bg-orange hover:bg-orange-400"
+            className="bg-orange-500 hover:bg-orange-400"
         />
       </section>
 
@@ -492,7 +492,7 @@ const ExpenseManager = () => {
           <Btn 
             text="View Balances"
             onClick={fetchGroupBalances}
-              className="bg-orange hover:bg-orange-400"
+              className="bg-orange-500 hover:bg-orange-400"
           />
         </div>
         
