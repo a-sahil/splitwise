@@ -70,7 +70,7 @@ const contractABI = [
 
 const ExpenseManager = () => {
   const [address, setAddress] = useState("");
-  const [chainId, setChainId] = useState("0x1");
+  const [chainId, setChainId] = useState("0x61");
   const [contract, setContract] = useState(null);
   const [loading, setLoading] = useState({
     connect: false,
@@ -93,9 +93,9 @@ const ExpenseManager = () => {
 
   const showNotification = useCallback((message, isSuccess = true) => {
     Toast.show({
-      content: <div className="text-body1 font-semibold text-center text-White">{message}</div>,
+      content: <div className="text-body1 font-semibold text-center text-blue-500">{message}</div>,
       position: 'top',
-      duration: 3000
+      duration: 4000
     });
   }, []);
 
@@ -348,6 +348,7 @@ const ExpenseManager = () => {
         text={address ? 'Disconnect' : 'Connect Wallet'} 
         loading={loading.connect}
         onClick={address ? () => ethereum?.disconnect?.() : connectWallet} 
+        className="hover:bg-orange-400"
       />
     </section>
 
@@ -395,6 +396,10 @@ const ExpenseManager = () => {
           loading={loading.contract}
           onClick={createGroup}
         />
+
+        <div className="text-white pt-2">
+        {`group created with ID: ${groupId}`}
+          </div>
       </section>
 
       {/* Add Expense Section */}
@@ -423,7 +428,7 @@ const ExpenseManager = () => {
         />
         <input
           type="number"
-          placeholder="Amount (ETH)"
+          placeholder="Amount (tBNB)"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
           className="w-full p-2 mb-2 border rounded"
@@ -461,7 +466,7 @@ const ExpenseManager = () => {
         />
         <input
           type="number"
-          placeholder="Amount (ETH)"
+          placeholder="Amount (tBNB)"
           value={settleAmount}
           onChange={(e) => setSettleAmount(e.target.value)}
           className="w-full p-2 mb-2 border rounded"
@@ -488,10 +493,10 @@ const ExpenseManager = () => {
         
         {groupMembersList.length > 0 && (
           <div className="mb-4">
-            <h3 className="font-semibold mb-2">Group Members:</h3>
-            <ul className="list-disc pl-5">
+            <h3 className="font-semibold mb-2 text-white">Group Members:</h3>
+            <ul className="list-disc pl-5 text-white">
               {groupMembersList.map((member, index) => (
-                <li key={index} className="break-all">{member}</li>
+                <li key={index} className="break-all text-white">{member}</li>
               ))}
             </ul>
           </div>
@@ -499,10 +504,10 @@ const ExpenseManager = () => {
         
         {groupBalances.length > 0 && (
           <div>
-            <h3 className="font-semibold mb-2">Balances:</h3>
-            <ul className="list-disc pl-5">
+            <h3 className="font-semibold mb-2 text-white">Balances:</h3>
+            <ul className="list-disc pl-5 text-white">
               {groupBalances.map((balance, index) => (
-                <li key={index}>{balance} ETH</li>
+                <li key={index}>{balance} tBNB</li>
               ))}
             </ul>
           </div>
